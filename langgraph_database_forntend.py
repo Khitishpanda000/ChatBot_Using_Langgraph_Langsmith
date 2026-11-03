@@ -1,5 +1,5 @@
 import streamlit as st
-from langgraph_database_backend import chatbot, retriver_all_threads
+from Langgraph_Tool_DataBase_Backend import chatbot, retrieve_all_threads
 from langchain_core.messages import HumanMessage, AIMessage
 import uuid
 import os
@@ -54,7 +54,7 @@ if 'thread_id' not in st.session_state:
     st.session_state['thread_id'] = generate_thread_id()
 
 if 'chat_threads' not in st.session_state:
-    st.session_state['chat_threads'] = retriver_all_threads()
+    st.session_state['chat_threads'] = retrieve_all_threads()
 
 if 'thread_titles' not in st.session_state:
     st.session_state['thread_titles'] = {}
